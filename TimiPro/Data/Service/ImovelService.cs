@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using TimiPro.Data.EF;
 using TimiPro.Data.Service.Interface;
-using TimiPro.Data.Service.Interfaces;
 using TimiPro.Models;
 
 namespace TimiPro.Data.Service
