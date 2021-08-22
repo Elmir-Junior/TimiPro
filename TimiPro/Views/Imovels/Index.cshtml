@@ -1,0 +1,64 @@
+﻿@model IEnumerable<TimiPro.Models.Imovel>
+
+@{
+    ViewData["Title"] = "Imóveis Cadastrados";
+}
+
+<h2>Imóveis</h2>
+
+<div class="card card-body">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Imóveis Cadastrados
+        <a asp-action="Create" style=" float: right;">Criar Novo Cadastro de Imóvel</a>
+    </div>
+    <table class="table" id="datatablesSimple">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TipoNegocio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Valor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descricao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ativo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClienteNome)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoNegocio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Valor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descricao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ativo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClienteNome)
+                    </td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.ID">Editar Imóvel</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID">Detalhes Imóvel</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID">Excluir Imóvel</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

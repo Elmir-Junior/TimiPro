@@ -1,0 +1,60 @@
+﻿@model IEnumerable<TimiPro.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Clientes Cadastrados";
+}
+
+<h2>Clientes</h2>
+
+
+<div class="card card-body">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Clientes Cadastrados
+        <a asp-action="Create" style=" float: right;">Criar Novo Cadastro de Cliente</a>
+    </div>
+    <table class="table" id="datatablesSimple">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CPF)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ativo)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CPF)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ativo)
+                    </td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.ID">Editar Cliente</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID">Detalhes Cliente</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID">Excluir Cliente</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
