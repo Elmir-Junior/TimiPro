@@ -29,7 +29,8 @@ namespace TimiPro.Controllers
 
         public IActionResult Details(int id)
         {
-            return View(_context.ImovelPeloID(id));
+            var teste = _context.ImovelPeloID(id);
+            return View(teste);
 
         }
 
