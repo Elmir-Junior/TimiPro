@@ -22,7 +22,8 @@ namespace TimiPro.Controllers
 
         public ActionResult Index()
         {
-            return View(_context.ListarClientes());
+            var teste = _context.ListarClientes();
+            return View(teste);
         }
 
         public ActionResult Details(int id)
