@@ -27,8 +27,8 @@ namespace TimiPro.Controllers
 
         public ActionResult Details(int id)
         {
-
-            return View(_context.ClientesPeloID(id));
+            var teste = _context.ClientesPeloID(id);
+            return View(teste);
         }
 
         //GET Create
